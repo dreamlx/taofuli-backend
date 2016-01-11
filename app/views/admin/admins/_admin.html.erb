@@ -1,0 +1,7 @@
+<tr>
+  <% Admin::HEADERS.each do |column| %>
+    <td><%= admin.send(column) %></td>
+  <% end %>
+  <td><%= link_to t(:edit), edit_admin_admin_path(admin) %></td>
+  <td><%= link_to t(:destroy), admin_admin_path(admin), method: :delete, data: {confirm: t(:are_you_sure)} %></td>
+</tr>

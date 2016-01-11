@@ -1,0 +1,21 @@
+<div class="col-md-10">
+  <h3><%= t(:admin_list) %></h3>
+</div>
+<div class="col-md-2">
+  <%= link_to t(:new_admin), new_admin_admin_path, class: "btn btn-danger" %>
+</div>
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <% Admin::HEADERS.each do |column| %>
+          <th><%= Admin.human_attribute_name(column) %></th>
+        <% end %>
+        <th colspan="2"><%= t(:operations) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @admins %>
+    </tbody>
+  </table>
+</div>

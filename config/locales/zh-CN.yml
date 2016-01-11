@@ -1,2 +1,24 @@
 zh-CN:
+  activerecord:
+    models:
+      admin: 管理员
+    attributes:
+      admin:
+        name: 姓名
+        password: 密码
+        password_confirmation: 确认密码
+        created_at: 创建
+        updated_at: 更新
   title: Title
+  new_admin: 新建管理员
+  admin_list: 管理员列表
+  are_you_sure: 请确认操作
+  operations: 操作
+  edit: 编辑
+  destroy: 删除
+  back: 返回
+  login: 登录
+  logout: 登出
+  please_log_in: 请登录
+  reset_password: 重设密码
+  invalid_email_or_password: 无效的用户名或密码
