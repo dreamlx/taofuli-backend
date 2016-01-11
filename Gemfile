@@ -10,17 +10,28 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
-gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
 gem 'rails-i18n'
 gem 'simple_form'
+gem 'rack-cors'
+# carrierwave for image upload and save in qiniu
+gem 'carrierwave'
+gem 'qiniu-rs'
+gem 'carrierwave-qiniu'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger', '0.0.2'
 end
 
