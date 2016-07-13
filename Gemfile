@@ -32,6 +32,6 @@ group :development do
   gem 'spring'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
-  gem 'capistrano-passenger', '0.0.2'
+  gem 'capistrano-passenger'
 end
 

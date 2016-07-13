@@ -15,18 +15,17 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
-  database: sample_development
+  database: taofuli_backend_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: sample_test
+  database: taofuli_backend_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +48,6 @@ test:
 #
 production:
   <<: *default
-  database: sample_production
-  username: sample
+  database: taofuli_backend_production
+  username: taofuli_backend
   password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>

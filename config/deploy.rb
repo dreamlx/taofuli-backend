@@ -34,6 +34,10 @@ set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # Default value for keep_releases is 5
 set :keep_releases, 500
 
+set :passenger_rvm_ruby_version, "2.3.1"
+set :passenger_restart_with_sudo, true
+set :passenger_restart_with_touch, true
+
 namespace :deploy do
 
   after :restart, :clear_cache do
