@@ -5,11 +5,19 @@ Rails.application.routes.draw do
     delete  'logout'  => 'sessions#destroy'
     resources :admins
     resources :events
+    resources :users do
+      get :active, on: :member
+      get :inactive, on: :member
+    end
     root 'welcome#index'
   end
 
   namespace :api do
     resources :events, only: [:index, :show], defaults: {format: :json}
+    resources :users ,only: [], defaults: {format: :json} do
+      patch :update_profile, on: :collection
+      get :get_info, on: :collection
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,6 +3,7 @@ zh-CN:
     models:
       admin: 管理员
       event: 福利
+      user: 用户
     attributes:
       admin:
         name: 姓名
@@ -20,6 +21,15 @@ zh-CN:
         effective_date: 生效日期
         expire_date: 失效日期
         state: 状态
+      user:
+        name: 姓名 
+        gender: 性别
+        cell: 手机
+        email: 邮箱
+        openid: OpenID
+        state: 状态
+        created_at: 创建
+        updated_at: 更新
   title: 淘福利
   new_admin: 新建管理员
   admin_list: 管理员列表
@@ -35,3 +45,7 @@ zh-CN:
   invalid_email_or_password: 无效的用户名或密码
   event_list: 福利列表
   new_event: 新建福利
+  new_user: 新建用户
+  user_list: 用户列表
+  active: 激活
+  inactive: 封禁

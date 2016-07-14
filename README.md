@@ -20,3 +20,29 @@ response:
           ]
         }
 ```
+### 获取用户信息
+```
+curl -X GET --header "Authorization: Token token=#{openid}" http://localhost:3000/api/users/get_info
+```
+```
+response:
+        {
+          "name"=>"foobar",
+          "cell"=>"1111111111",
+          "email"=>"foobar@example.com",
+          "gender"=>"男"
+          "state"=>"权益未激活"
+        }
+```
+### 更新用户信息
+```
+curl -X PATCH --header "Authorization: Token token=#{openid}" http://localhost:3000/api/users/update_profile
+```
+```
+params: {
+          "name"=>"foobar",
+          "cell"=>"1111111111",
+          "email"=>"foobar@example.com",
+          "gender"=>"男"
+        }
+```

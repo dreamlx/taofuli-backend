@@ -1,0 +1,14 @@
+<tr>
+  <% User::HEADERS.each do |column| %>
+    <td><%= user.send(column) %></td>
+  <% end %>
+  <td><%= I18n.l(user.created_at, format: :long) %></td>
+  <td><%= I18n.l(user.updated_at, format: :long) %></td>
+  <% if user.state == "权益未激活" %>
+    <td><%= link_to t(:active), active_admin_user_path(user) %></td>
+  <% else %>
+    <td><%= link_to t(:inactive), inactive_admin_user_path(user) %></td>
+  <% end %>
+  <td><%= link_to t(:edit), edit_admin_user_path(user) %></td>
+  <td><%= link_to t(:destroy), admin_user_path(user), method: :delete, data: {confirm: t(:are_you_sure)} %></td>
+</tr>

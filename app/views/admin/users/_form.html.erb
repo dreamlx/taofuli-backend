@@ -1,0 +1,14 @@
+<div class="col-md-6">
+  <%= simple_form_for([:admin, @user]) do |f| %>
+    <%= f.input :openid, disabled: !@user.new_record? %>
+    <%= f.input :name %>
+    <%= f.input :gender %>
+    <%= f.input :cell %>
+    <%= f.input :email %>
+    <%= f.input :state, disabled: true %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+<div class="col-md-12">
+  <%= link_to t(:back), :back %>
+</div>

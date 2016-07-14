@@ -21,6 +21,8 @@ gem 'carrierwave-qiniu'
 gem 'mini_magick'
 gem 'thin'
 gem 'ransack'
+gem 'figaro'
+gem 'state_machines-activerecord'
 
 group :development, :test do
   gem 'byebug'
