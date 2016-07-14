@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-
   namespace :admin do
     get     'login'   => 'sessions#new'
     post    'login'   => 'sessions#create'
     delete  'logout'  => 'sessions#destroy'
     resources :admins
+    resources :events
     root 'welcome#index'
+  end
+
+  namespace :api do
+    resources :events, only: [:index, :show], defaults: {format: :json}
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

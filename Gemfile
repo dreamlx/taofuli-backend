@@ -19,6 +19,8 @@ gem 'carrierwave'
 gem 'qiniu-rs'
 gem 'carrierwave-qiniu'
 gem 'mini_magick'
+gem 'thin'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug'

@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to t(:title), root_url, class: "navbar-brand" %>
+      <%= link_to t(:title), admin_root_url, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if admin_logged_in? %>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li class="<%= 'active' if params[:controller] == 'admin/events' %>"><%= link_to Event.model_name.human, admin_events_path %></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="<%= 'active' if params[:controller] == 'admin/admins' %>"><%= link_to Admin.model_name.human, admin_admins_path %></li>

@@ -2,6 +2,7 @@ zh-CN:
   activerecord:
     models:
       admin: 管理员
+      event: 福利
     attributes:
       admin:
         name: 姓名
@@ -9,7 +10,17 @@ zh-CN:
         password_confirmation: 确认密码
         created_at: 创建
         updated_at: 更新
-  title: Title
+      event:
+        title: 福利名称 
+        url: URL 
+        image: 图片
+        amount: 额外福利金额
+        created_at: 创建
+        updated_at: 更新
+        effective_date: 生效日期
+        expire_date: 失效日期
+        state: 状态
+  title: 淘福利
   new_admin: 新建管理员
   admin_list: 管理员列表
   are_you_sure: 请确认操作
@@ -22,3 +33,5 @@ zh-CN:
   please_log_in: 请登录
   reset_password: 重设密码
   invalid_email_or_password: 无效的用户名或密码
+  event_list: 福利列表
+  new_event: 新建福利
