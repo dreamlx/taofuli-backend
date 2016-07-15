@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715015848) do
+ActiveRecord::Schema.define(version: 20160715070025) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20160715015848) do
     t.datetime "updated_at",                             null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "event_id",   limit: 4
+    t.integer  "amount",     limit: 4
+    t.string   "state",      limit: 255
+    t.date     "date"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "orders", ["event_id"], name: "index_orders_on_event_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "openid",     limit: 255
     t.string   "name",       limit: 255
@@ -54,4 +67,6 @@ ActiveRecord::Schema.define(version: 20160715015848) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "orders", "events"
+  add_foreign_key "orders", "users"
 end

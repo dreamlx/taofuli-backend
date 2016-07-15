@@ -60,3 +60,31 @@ params:   {
 response:
         201 ok;422 ng
 ```
+### 创建福利记录
+```
+curl -X POST --header "Authorization: Token token=#{openid}" -d "event_id=1" http://localhost:3000/api/orders/
+```
+```
+response:
+        201 ok;422 ng
+```
+### 福利记录列表
+```
+curl -X GET --header "Authorization: Token token=#{openid}" http://localhost:3000/api/orders/
+```
+```
+response:
+        {
+          "orders"=>
+          [
+          {
+            "id"=>34, 
+            "date"=>"2016年7月15日", 
+            "event_title"=>"MyString", 
+            "amount"=>1, 
+            "state"=>"未派发"
+          },
+          ...
+          ]
+        }
+```

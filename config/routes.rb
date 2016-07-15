@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get :get_info, on: :collection
     end
     resources :customers, only: :create, defaults: {format: :json}
+    resources :orders, only: [:create, :index], defaults: {format: :json}
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
