@@ -23,6 +23,7 @@ gem 'thin'
 gem 'ransack'
 gem 'figaro'
 gem 'state_machines-activerecord'
+gem "chartkick"
 
 group :development, :test do
   gem 'byebug'

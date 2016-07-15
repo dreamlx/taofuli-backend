@@ -74,6 +74,7 @@ GEM
     carrierwave-qiniu (0.2.4)
       carrierwave
       qiniu (~> 6.5.1)
+    chartkick (2.0.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -261,6 +262,7 @@ DEPENDENCIES
   capistrano-rvm
   carrierwave
   carrierwave-qiniu
+  chartkick
   coffee-rails (~> 4.1.0)
   factory_girl_rails
   faker

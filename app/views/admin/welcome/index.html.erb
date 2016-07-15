@@ -1,1 +1,10 @@
-<h1>Hello, Admin.</h1>
+<h1>Bar chart</h1>
+<% 
+  hash = Hash.new
+  Event.order(updated_at: :desc).each do |event|
+    hash[Event.find(event.id).title] = Order.where(event_id: event.id).count
+  end
+%>
+<p>
+  <%= bar_chart hash %>
+</p>
