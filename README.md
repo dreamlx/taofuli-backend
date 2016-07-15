@@ -88,3 +88,7 @@ response:
           ]
         }
 ```
+### 获取signature
+```
+curl -X GET -d "url=http://www.baidu.com" http://localhost:3000/api/wx_get_jsapi_ticket
+```

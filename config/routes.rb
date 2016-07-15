@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
     resources :customers, only: :create, defaults: {format: :json}
     resources :orders, only: [:create, :index], defaults: {format: :json}
+    get 'wx_get_jsapi_ticket' => 'users#wx_get_jsapi_ticket'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
