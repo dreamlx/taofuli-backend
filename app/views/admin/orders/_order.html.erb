@@ -1,0 +1,11 @@
+<tr>
+  <td><%= order.user.name if order.user %></td>
+  <td><%= order.event.title if order.event %></td>
+  <td><%= order.amount %></td>
+  <td><%= order.state %></td>
+  <td><%= I18n.l(order.date, format: :long) %></td>
+  <td><%= I18n.l(order.created_at, format: :long) %></td>
+  <td><%= I18n.l(order.updated_at, format: :long) %></td>
+  <td><%= link_to t(:edit), edit_admin_order_path(order) %></td>
+  <td><%= link_to t(:destroy), admin_order_path(order), method: :delete, data: {confirm: t(:are_you_sure)} %></td>
+</tr>

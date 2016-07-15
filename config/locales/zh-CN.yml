@@ -5,6 +5,7 @@ zh-CN:
       event: 福利
       user: 用户
       customer: 商务合作
+      order: 记录
     attributes:
       admin:
         name: 姓名
@@ -40,6 +41,14 @@ zh-CN:
         note: 备注
         created_at: 创建
         updated_at: 更新
+      order:
+        user_id: 用户 
+        event_id: 福利
+        amount: 金额
+        state: 状态
+        date: 日期
+        created_at: 创建
+        updated_at: 更新
   title: 淘福利
   new_admin: 新建管理员
   admin_list: 管理员列表
@@ -61,3 +70,5 @@ zh-CN:
   inactive: 封禁
   customer_list: 商务合作列表
   new_customer: 新建商务合作
+  order_list: 记录列表
+  new_order: 新建记录

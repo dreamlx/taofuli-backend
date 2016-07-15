@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :inactive, on: :member
     end
     resources :customers
+    resources :orders
     root 'welcome#index'
   end
 
