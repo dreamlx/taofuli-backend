@@ -1,0 +1,9 @@
+<tr>
+  <% Customer::HEADERS.each do |column| %>
+    <td><%= customer.send(column) %></td>
+  <% end %>
+  <td><%= I18n.l(customer.created_at, format: :long) %></td>
+  <td><%= I18n.l(customer.updated_at, format: :long) %></td>
+  <td><%= link_to t(:edit), edit_admin_customer_path(customer) %></td>
+  <td><%= link_to t(:destroy), admin_customer_path(customer), method: :delete, data: {confirm: t(:are_you_sure)} %></td>
+</tr>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :active, on: :member
       get :inactive, on: :member
     end
+    resources :customers
     root 'welcome#index'
   end
 
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
       patch :update_profile, on: :collection
       get :get_info, on: :collection
     end
+    resources :customers, only: :create, defaults: {format: :json}
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

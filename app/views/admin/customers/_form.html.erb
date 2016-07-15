@@ -1,0 +1,14 @@
+<div class="col-md-6">
+  <%= simple_form_for([:admin, @customer]) do |f| %>
+    <%= f.input :name, disabled: !@customer.new_record? %>
+    <%= f.input :cell, disabled: !@customer.new_record? %>
+    <%= f.input :qq, disabled: !@customer.new_record? %>
+    <%= f.input :desc, disabled: !@customer.new_record? %>
+    <%= f.input :state %>
+    <%= f.input :note %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+<div class="col-md-12">
+  <%= link_to t(:back), :back %>
+</div>

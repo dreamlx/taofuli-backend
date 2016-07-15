@@ -5,6 +5,5 @@ FactoryGirl.define do
     gender "MyString"
     cell "MyString"
     email "MyString"
-    state "MyString"
   end
 end

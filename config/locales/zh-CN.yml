@@ -4,6 +4,7 @@ zh-CN:
       admin: 管理员
       event: 福利
       user: 用户
+      customer: 商务合作
     attributes:
       admin:
         name: 姓名
@@ -30,6 +31,15 @@ zh-CN:
         state: 状态
         created_at: 创建
         updated_at: 更新
+      customer:
+        name: 姓名 
+        cell: 手机
+        qq: QQ
+        desc: 叙述
+        state: 状态
+        note: 备注
+        created_at: 创建
+        updated_at: 更新
   title: 淘福利
   new_admin: 新建管理员
   admin_list: 管理员列表
@@ -49,3 +59,5 @@ zh-CN:
   user_list: 用户列表
   active: 激活
   inactive: 封禁
+  customer_list: 商务合作列表
+  new_customer: 新建商务合作

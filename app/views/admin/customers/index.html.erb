@@ -1,0 +1,23 @@
+<div class="col-md-10">
+  <h3><%= t(:customer_list) %></h3>
+</div>
+<div class="col-md-2">
+  <%= link_to t(:new_customer), new_admin_customer_path, class: "btn btn-danger" %>
+</div>
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <% Customer::HEADERS.each do |column| %>
+          <th><%= Customer.human_attribute_name(column) %></th>
+        <% end %>
+        <th><%= Customer.human_attribute_name(:created_at) %></th>
+        <th><%= Customer.human_attribute_name(:updated_at) %></th>
+        <th colspan="3"><%= t(:operations) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @customers %>
+    </tbody>
+  </table>
+</div>

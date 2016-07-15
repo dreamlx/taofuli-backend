@@ -17,6 +17,7 @@
         <ul class="nav navbar-nav">
           <li class="<%= 'active' if params[:controller] == 'admin/events' %>"><%= link_to Event.model_name.human, admin_events_path %></a></li>
           <li class="<%= 'active' if params[:controller] == 'admin/users' %>"><%= link_to User.model_name.human, admin_users_path %></a></li>
+          <li class="<%= 'active' if params[:controller] == 'admin/customers' %>"><%= link_to Customer.model_name.human, admin_customers_path %></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="<%= 'active' if params[:controller] == 'admin/admins' %>"><%= link_to Admin.model_name.human, admin_admins_path %></li>

@@ -36,7 +36,7 @@ response:
 ```
 ### 更新用户信息
 ```
-curl -X PATCH --header "Authorization: Token token=#{openid}" http://localhost:3000/api/users/update_profile
+curl -X PATCH --header "Authorization: Token token=#{openid}" -d "name=foobar&..." http://localhost:3000/api/users/update_profile
 ```
 ```
 params: {
@@ -45,4 +45,18 @@ params: {
           "email"=>"foobar@example.com",
           "gender"=>"男"
         }
+```
+### 商务合作
+```
+curl -X POST -d "name=foobar&..." http://localhost:3000/api/customers/
+```
+```
+params:   {
+            "name"=>"foobar",
+            "cell"=>"11111111111",
+            "qq"=>"1111111111",
+            "desc"=>"many words"
+          }
+response:
+        201 ok;422 ng
 ```
