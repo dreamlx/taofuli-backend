@@ -14,7 +14,11 @@ response:
               "amount"=>1, 
               "effective_date"=>"2016-07-14", 
               "expire_date"=>"2016-07-14", 
-              "state"=>"有效"
+              "engaged"=>1,
+              "available_quota"=>1,
+              "content"=>"detail",
+              "official_benefit"=>"official",
+              "additional_benefit"=>"additional"
             },
             ....
           ]

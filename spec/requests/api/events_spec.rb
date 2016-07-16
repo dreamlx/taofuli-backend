@@ -14,9 +14,13 @@ RSpec.describe "events" do
       expect(json["url"]).to eq event.url
       expect(json["image_url"]).to eq event.image_url
       expect(json["amount"]).to eq event.amount
-      expect(json["state"]).to eq event.state
       expect(json["effective_date"]).to eq event.effective_date.to_s
       expect(json["expire_date"]).to eq event.expire_date.to_s
+      expect(json["available_quota"]).to eq event.available_quota
+      expect(json["engaged"]).to eq event.engaged
+      expect(json["content"]).to eq event.content
+      expect(json["official_benefit"]).to eq event.official_benefit
+      expect(json["additional_benefit"]).to eq event.additional_benefit
     end
   end
 end

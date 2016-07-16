@@ -23,6 +23,10 @@ zh-CN:
         effective_date: 生效日期
         expire_date: 失效日期
         state: 状态
+        content: 参与细则
+        quota: 名额
+        official_benefit: 官方福利
+        additional_benefit: 淘福利额外福利
       user:
         name: 姓名 
         gender: 性别

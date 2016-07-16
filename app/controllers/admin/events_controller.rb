@@ -33,6 +33,8 @@ class Admin::EventsController < Admin::BaseController
     def event_params
       params.require(:event).permit(
         :title, :url, :image, :amount,
-        :effective_date, :expire_date, :state)
+        :effective_date, :expire_date, 
+        :state, :quota, :content, 
+        :official_benefit, :additional_benefit)
     end
 end

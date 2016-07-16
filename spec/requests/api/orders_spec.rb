@@ -8,11 +8,23 @@ RSpec.describe "orders" do
       valid_header = {
         authorization: ActionController::HttpAuthentication::Token.encode_credentials("#{user.openid}")
       }
-      event = create(:event)
+      event = create(:event, quota: 1)
       post "/api/orders", {event_id: event.id}, valid_header
       expect(response).to be_success
       expect(response).to have_http_status(201)
       expect(Order.count).to eq 1
+    end
+
+    it "failed to create order because of no quota" do
+      user = create(:user)
+      valid_header = {
+        authorization: ActionController::HttpAuthentication::Token.encode_credentials("#{user.openid}")
+      }
+      event = create(:event, quota: 1)
+      create(:order, event_id: event.id)
+      post "/api/orders", {event_id: event.id}, valid_header
+      expect(response).not_to be_success
+      expect(response).to have_http_status(422)
     end
   end
 
