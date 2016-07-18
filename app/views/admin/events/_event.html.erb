@@ -4,6 +4,9 @@
     <td><%= event.send(column) %></td>
   <% end %>
   <td><%= link_to t(:url), event.url %></td>
+  <td><%= truncate event.content %></td>
+  <td><%= truncate event.official_benefit %></td>
+  <td><%= truncate event.additional_benefit %></td>
   <td><%= I18n.l(event.created_at, format: :long) %></td>
   <td><%= I18n.l(event.updated_at, format: :long) %></td>
   <td><%= link_to t(:edit), edit_admin_event_path(event) %></td>
