@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716010300) do
+ActiveRecord::Schema.define(version: 20160718054054) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160716010300) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",              limit: 255
-    t.string   "url",                limit: 255
+    t.text     "url",                limit: 65535
     t.string   "image",              limit: 255
     t.integer  "amount",             limit: 4,     default: 0
     t.string   "state",              limit: 255
