@@ -23,4 +23,16 @@ RSpec.describe "events" do
       expect(json["additional_benefit"]).to eq event.additional_benefit
     end
   end
+
+  describe "GET #show" do
+    it "get the requested event" do
+      Event.delete_all
+      event = create(:event, state: "有效")
+      get "/api/events/#{event.id}"
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+      json = JSON.parse(response.body)["event"]
+      expect(json["id"]).to eq event.id
+    end
+  end
 end

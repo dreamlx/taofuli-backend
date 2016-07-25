@@ -24,6 +24,10 @@ response:
           ]
         }
 ```
+### 获取某个福利详情
+```
+curl -X GET http://localhost:3000/api/events/{event.id}
+```
 ### 获取用户信息
 ```
 curl -X GET --header "Authorization: Token token=#{openid}" http://localhost:3000/api/users/get_info
