@@ -1,19 +1,17 @@
-<div class="col-md-6">
-  <%= simple_form_for([:admin, @event]) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :url %>
-    <%= f.input :image %>
-    <%= f.input :amount %>
-    <%= f.input :quota %>
-    <%= f.input :effective_date, html5: true %>
-    <%= f.input :expire_date, html5: true %>
-    <%= f.input :state, collection: Event::STATES %>
-    <%= f.input :content %>
-    <%= f.input :official_benefit %>
-    <%= f.input :additional_benefit %>
-    <%= f.button :submit %>
-  <% end %>
-</div>
-<div class="col-md-12">
-  <%= link_to t(:back), :back %>
-</div>
+<%= simple_form_for([:admin, @event]) do |f| %>
+<%= f.input :title %>
+<%= f.input :url %>
+<%= f.input :image %>
+<%= f.input :amount %>
+<%= f.input :quota %>
+<%= f.input :effective_date, html5: true %>
+<%= f.input :expire_date, html5: true %>
+<%= f.input :state, collection: Event::STATES %>
+<p><strong style="color:red">!!下面三个字段不要写序号!!</strong></p>
+<%= f.input :content,hint: "请不要写序号", :input_html => {:rows => 10} %>
+<%= f.input :official_benefit, hint: "请不要写序号", :input_html => {:rows => 10} %>
+<%= f.input :additional_benefit, hint: "请不要写序号", :input_html => {:rows => 10} %>
+<%= f.button :submit %>
+<% end %>
+
+<%= link_to t(:back), :back %>

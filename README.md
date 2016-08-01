@@ -17,8 +17,11 @@ response:
               "engaged"=>1,
               "available_quota"=>1,
               "content"=>"detail",
+              "content_array"=>["hello", "world"],
               "official_benefit"=>"official",
-              "additional_benefit"=>"additional"
+              "official_benefit_array"=>=>["hello", "world"],
+              "additional_benefit"=>"additional",
+              "additional_benefit_array"=>["hello", "world"]
             },
             ....
           ]

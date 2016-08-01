@@ -8,5 +8,8 @@ json.expire_date event.expire_date
 json.engaged event.engaged
 json.available_quota event.available_quota
 json.content event.content
+json.content_array event.content.split("\r\n")
 json.official_benefit event.official_benefit
+json.official_benefit_array json.official_benefit.split("\r\n")
 json.additional_benefit event.additional_benefit
+json.additional_benefit_array event.additional_benefit.split("\r\n")
