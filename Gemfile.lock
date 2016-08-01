@@ -109,6 +109,12 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kaminari-i18n (0.4.0)
+      kaminari
+      rails
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -269,6 +275,8 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
+  kaminari-i18n
   mini_magick
   mysql2
   qiniu-rs

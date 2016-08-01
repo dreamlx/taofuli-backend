@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::BaseController
   def index
-    @users = User.order(updated_at: :desc)
+    @users = User.order(updated_at: :desc).page params[:page]
   end
 
   def new

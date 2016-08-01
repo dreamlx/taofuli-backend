@@ -5,6 +5,7 @@
   <%= link_to t(:new_user), new_admin_user_path, class: "btn btn-danger" %>
 </div>
 <div class="col-md-12">
+  <%= paginate @users %>
   <table class="table">
     <thead>
       <tr>
@@ -20,4 +21,5 @@
       <%= render @users %>
     </tbody>
   </table>
+  <%= paginate @users %>
 </div>

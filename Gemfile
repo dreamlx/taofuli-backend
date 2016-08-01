@@ -24,6 +24,8 @@ gem 'ransack'
 gem 'figaro'
 gem 'state_machines-activerecord'
 gem "chartkick"
+gem 'kaminari'
+gem 'kaminari-i18n'
 
 group :development, :test do
   gem 'byebug'
