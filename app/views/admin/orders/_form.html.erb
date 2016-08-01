@@ -1,5 +1,6 @@
 <div class="col-md-6">
   <%= simple_form_for([:admin, @order]) do |f| %>
+    <%= render 'admin/shared/error_messages', object: f.object %>
     <%= f.input :user_id, collection: User.all %>
     <%= f.input :event_id, collection: Event.all %>
     <%= f.input :amount %>
