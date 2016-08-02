@@ -34,6 +34,29 @@ class Admin::EventsController < Admin::BaseController
     redirect_to admin_events_url
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def import
+    require 'csv'
+    @event = Event.find(params[:id])
+    file = params[:file]
+    cells = []
+    CSV.foreach(file.path, headers: true) do |row|
+      # find user according cell
+      user = User.find_by(cell: row.to_hash["cell"])
+      # find only one order
+      order = user.orders.find_by(event_id: params[:id]) if user
+      if order
+        if order.confirm
+          cells << row.to_hash["cell"]
+        end
+      end 
+    end
+    redirect_to admin_event_url(@event), notice: "#{cells.to_s}成功导入"
+  end
+
   private
     def event_params
       params.require(:event).permit(

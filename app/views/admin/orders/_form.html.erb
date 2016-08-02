@@ -4,7 +4,7 @@
     <%= f.input :user_id, collection: User.all %>
     <%= f.input :event_id, collection: Event.all %>
     <%= f.input :amount %>
-    <%= f.input :state %>
+    <%= f.input :state, collection: Order::STATES %>
     <%= f.input :date, html5: true %>
     <%= f.button :submit %>
   <% end %>

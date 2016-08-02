@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     post    'login'   => 'sessions#create'
     delete  'logout'  => 'sessions#destroy'
     resources :admins
-    resources :events
+    resources :events do
+      post :import, on: :member
+    end
     resources :users do
       get :active, on: :member
       get :inactive, on: :member

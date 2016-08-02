@@ -6,6 +6,8 @@ class Order < ActiveRecord::Base
   validate :available_quota
   before_create :set_date
 
+  STATES = ["未派发", "待派发", "已派发"]
+
   state_machine :state, :initial => :'未派发' do
     event :confirm do
       transition :'未派发' => :'待派发'
