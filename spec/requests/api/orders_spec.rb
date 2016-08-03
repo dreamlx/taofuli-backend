@@ -26,6 +26,20 @@ RSpec.describe "orders" do
       expect(response).not_to be_success
       expect(response).to have_http_status(422)
     end
+
+    it "failed to create order if order exist" do
+      user = create(:user)
+      valid_header = {
+        authorization: ActionController::HttpAuthentication::Token.encode_credentials("#{user.openid}")
+      }
+      event = create(:event, quota: 2)
+      order = create(:order, event_id: event.id, user_id: user.id)
+      post "/api/orders", {event_id: event.id}, valid_header
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+      json = JSON.parse(response.body)
+      expect(json["message"]).to eq "记录已存在"
+    end
   end
 
   describe "GET #index" do

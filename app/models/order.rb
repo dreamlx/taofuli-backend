@@ -2,7 +2,8 @@ class Order < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
   validates :user_id, presence: true
-  validates :event, presence: true
+  validates :event_id, presence: true
+  validates :event_id, uniqueness: {scope: :user_id}
   validate :available_quota
   before_create :set_date
 
