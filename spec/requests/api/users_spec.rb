@@ -21,6 +21,7 @@ RSpec.describe "users" do
       expect(json["cell"]).to eq new_attributes[:cell]
       expect(json["email"]).to eq new_attributes[:email]
       expect(json["gender"]).to eq new_attributes[:gender]
+      expect(json["state"]).to eq "权益已激活"
     end
   end
 

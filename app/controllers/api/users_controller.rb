@@ -3,6 +3,7 @@ class Api::UsersController < Api::BaseController
   def update_profile
     @user = current_user
     if @user.update(user_params)
+      @user.active if @user.name && @user.gender && @user.cell && @user.email
       render 'get_info'
     else
       return api_error(status: 422)
