@@ -1,3 +1,5 @@
+require 'net/http'
+require 'cgi'
 class Admin::EventsController < Admin::BaseController
   def index
     @events = Event.order(updated_at: :desc)
@@ -57,6 +59,32 @@ class Admin::EventsController < Admin::BaseController
     redirect_to admin_event_url(@event), notice: "#{cells.to_s}成功导入"
   end
 
+  def pay
+    @event = Event.find(params[:id])
+
+
+    domain = Rails.env.development? ? '139.196.233.121' : '127.0.0.1'
+    path = '/wechat/pay.php'
+    port = '8080'
+    @event.orders.each do |order|
+      if order.state == "待派发"
+        user = order.user
+        parameters = {
+          openid: user.openid,
+          act_name: @event.title,
+          send_name: "淘福利",
+          total_amount: order.amount * 100
+        }
+        res = http_get(domain, path, port, parameters)
+        if res.include?("SUCCESS")
+          order.pay
+        end
+      end
+    end
+    
+    redirect_to admin_event_url(@event)
+  end
+
   private
     def event_params
       params.require(:event).permit(
@@ -64,5 +92,10 @@ class Admin::EventsController < Admin::BaseController
         :effective_date, :expire_date, 
         :state, :quota, :content, 
         :official_benefit, :additional_benefit)
+    end
+
+    def http_get(domain,path, port, params)
+        return Net::HTTP.get(domain, "#{path}?".concat(params.collect { |k,v| "#{k}=#{CGI::escape(v.to_s)}" }.join('&')), port ) if not params.nil?
+        return Net::HTTP.get(domain, path)
     end
 end

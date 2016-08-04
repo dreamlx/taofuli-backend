@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :admins
     resources :events do
       post :import, on: :member
+      get :pay, on: :member
     end
     resources :users do
       get :active, on: :member
