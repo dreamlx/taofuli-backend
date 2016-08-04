@@ -5,6 +5,7 @@
   <%= link_to t(:new_order), new_admin_order_path, class: "btn btn-danger" %>
 </div>
 <div class="col-md-12">
+  <%= paginate @orders %>
   <table class="table">
     <thead>
       <tr>
@@ -19,9 +20,8 @@
       </tr>
     </thead>
     <tbody>
-      <%= paginate @orders %>
       <%= render @orders %>
-      <%= paginate @orders %>
     </tbody>
   </table>
+  <%= paginate @orders %>
 </div>
