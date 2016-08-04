@@ -46,6 +46,7 @@ class Admin::EventsController < Admin::BaseController
     file = params[:file]
     cells = []
     CSV.foreach(file.path, headers: true) do |row|
+      next if !row.to_hash.blank?
       # find user according cell
       user = User.find_by(cell: row.to_hash["cell"])
       # find only one order
