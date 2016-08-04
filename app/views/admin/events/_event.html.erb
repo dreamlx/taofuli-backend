@@ -12,4 +12,5 @@
   <td><%= link_to t(:edit), edit_admin_event_path(event) %></td>
   <td><%= link_to t(:destroy), admin_event_path(event), method: :delete, data: {confirm: t(:are_you_sure)} %></td>
   <td><%= link_to t(:show), admin_event_path(event) %></td>
+  <td><%= link_to t(:pay), pay_admin_event_path(event), data: {confirm: t(:are_you_sure)} %></td>
 </tr>
