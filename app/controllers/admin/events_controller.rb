@@ -1,5 +1,6 @@
 require 'net/http'
 require 'cgi'
+require 'json'
 class Admin::EventsController < Admin::BaseController
   def index
     @events = Event.order(updated_at: :desc)
@@ -77,7 +78,7 @@ class Admin::EventsController < Admin::BaseController
           total_amount: order.amount * 100
         }
         res = http_get(domain, path, port, parameters)
-        if res.include?("SUCCESS")
+        if JSON.parse(res)["return_code"] == "SUCCESS"
           order.pay
         end
       end
